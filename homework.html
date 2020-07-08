@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{width: 1200px;}
+			img{width: 300px;height: 200px;}
+		</style>
+	</head>
+	<body>
+		<center>
+			<table border="" cellspacing="" cellpadding="" id="tabFood">
+				<tr>
+					<th>id</th>
+					<th>图片</th>
+					<th>名字</th>
+					<th>信息</th>
+					<th>价格</th>
+					<th>店名</th>
+				</tr>	
+				<input type="button" id="" value="添加food" onclick="getFood()" />
+			</table>
+		</center>
+		<script type="text/javascript">
+			function getHttprequest(){
+				if(window.XMLHttpRequest){
+					return new XMLHttpRequest();
+				}else{
+					return new ActiveXObject();
+				}
+			}
+			function getFood(){
+				var xmlHttprequest=getHttprequest();
+				xmlHttprequest.open("GET","data.json")
+				xmlHttprequest.onreadystatechange=function(){
+					if(xmlHttprequest.readyState==4&&xmlHttprequest.status==200){
+						var str=xmlHttprequest.responseText
+						var foodMessage=JSON.parse(str)
+						setFoodMessage(foodMessage);
+					}
+				}
+				xmlHttprequest.send()
+			}
+			
+			function setFoodMessage(foodMessage){
+				var tab=document.getElementById("tabFood")
+				for(var i=0;i<foodMessage.length;i++){
+					tr=tab.insertRow(-1)
+					tr.insertCell(0).innerHTML=foodMessage[i].foodsId
+					tr.insertCell(1).innerHTML="<img>"
+					tr.children[1].children[0].src=foodMessage[i].foodsImg
+					tr.insertCell(2).innerHTML=foodMessage[i].foodsName
+					tr.insertCell(3).innerHTML=foodMessage[i].message
+					tr.insertCell(4).innerHTML=foodMessage[i].price
+					tr.insertCell(5).innerHTML=foodMessage[i].shopid
+					
+				}
+			}
+		</script>
+	</body>
+</html>
