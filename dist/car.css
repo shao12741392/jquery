@@ -1,0 +1,11 @@
+*{margin: 0;padding: 0;}
+body div{width: 1200px ; margin: auto;}
+div div {display: flex; justify-content: space-between;}
+
+*{margin: 0;padding: 0;}
+section{width: 1200px;margin: auto;}
+section div img{width: 1200px;}
+ul li{list-style: none;margin-left: 20px;}
+ul{display: grid; grid-template-columns: 210px 210px 210px 210px 210px ; grid-auto-rows: 380px 380px;margin-left: 50px;}
+ul li img:nth-child(2){margin-left: 20px;}
+

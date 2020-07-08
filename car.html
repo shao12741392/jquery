@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript" src="./js/jQuery.js"></script>
+	</head>
+	<body onload="addCar()">
+		<div id="">
+			<p>全部商品<span id="">0</span>降价商品<span id="">0</span>库存紧张<span id=""></span>0</p><hr />
+			<table border="0" cellspacing="" cellpadding="">
+				<tr>
+					<th width="100px"><input type="checkbox">全选</th>
+					<th width="500px">商品信息</th>
+					<th width="100px">单价</th>
+					<th width="150px">数量</th>
+					<th width="150px">金额</th>
+					<th width="200px">操作</th>				
+				</tr>
+			
+			</table>
+			<div id="">
+				<p><input type="checkbox"id="changeAll" onclick="changeAll(this)"/>全选<span onclick="delAll()">删除</span><span>清除失效宝贝</span><span>移入收藏夹</span><span>分享</span></p>
+				<p>已选商品<span id="goods"></span>件，合计：（不含运费）<span id="pay"></span></p>
+			</div>
+		</div>
+	</body>
+	<footer>
+		<a href="index.html">首页</a>
+	</footer>
+	
+</html>
